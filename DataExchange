@@ -1,0 +1,20 @@
+class DataExchange {
+
+    public static void main(String[] args) {
+
+        int sensor1 = 30;   // Sensor 1 reading
+        int sensor2 = 50;   // Sensor 2 reading
+
+        System.out.println("Before Data Exchange:");
+        System.out.println("Sensor 1 = " + sensor1);
+        System.out.println("Sensor 2 = " + sensor2);
+        // Data exchange without extra variable
+        sensor1 = sensor1 + sensor2;
+        sensor2 = sensor1 - sensor2;
+        sensor1 = sensor1 - sensor2;
+
+        System.out.println("After Data Exchange:");
+        System.out.println("Sensor 1 = " + sensor1);
+        System.out.println("Sensor 2 = " + sensor2);
+    }
+}
