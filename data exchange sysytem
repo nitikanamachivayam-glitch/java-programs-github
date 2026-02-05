@@ -1,0 +1,23 @@
+class DataExchange {
+
+    // Method to send data
+    static String sendData() {
+        String data = "{ \"id\": 1, \"name\": \"Alice\", \"email\": \"alice@example.com\" }";
+        return data;
+    }
+
+    // Method to receive data
+    static void receiveData(String data) {
+        System.out.println("Received Data:");
+        System.out.println(data);
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("Sending Data...\n");
+
+        String exchangedData = sendData();
+
+        receiveData(exchangedData);
+    }
+}
