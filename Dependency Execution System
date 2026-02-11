@@ -1,0 +1,41 @@
+// Task 1
+class Task1 extends Thread {
+    @Override
+    public void run() {
+        System.out.println("Task1 started...");
+        try {
+            Thread.sleep(1000); // Simulate work
+        } catch (InterruptedException e) {}
+        System.out.println("Task1 completed.");
+    }
+}
+
+// Task 2
+class Task2 extends Thread {
+    @Override
+    public void run() {
+        System.out.println("Task2 started...");
+        try {
+            Thread.sleep(500); // Simulate work
+        } catch (InterruptedException e) {}
+        System.out.println("Task2 completed.");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        Task1 t1 = new Task1();
+        Task2 t2 = new Task2();
+
+        t1.start(); // Start Task1
+
+        try {
+            t1.join(); // Wait for Task1 to complete
+        } catch (InterruptedException e) {}
+
+        t2.start(); // Start Task2 after Task1 finishes
+
+        System.out.println("Main thread continues...");
+    }
+}
