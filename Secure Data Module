@@ -1,0 +1,48 @@
+class Student {
+    // Private data (hidden)
+    private int rollNo;
+    private String name;
+    private double marks;
+
+    // Setter methods
+    public void setRollNo(int rollNo) {
+        this.rollNo = rollNo;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setMarks(double marks) {
+        this.marks = marks;
+    }
+
+    // Getter methods
+    public int getRollNo() {
+        return rollNo;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getMarks() {
+        return marks;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student();
+
+        // Setting values using setters
+        s.setRollNo(101);
+        s.setName("Nitika");
+        s.setMarks(89.5);
+
+        // Getting values using getters
+        System.out.println("Roll No: " + s.getRollNo());
+        System.out.println("Name: " + s.getName());
+        System.out.println("Marks: " + s.getMarks());
+    }
+}
