@@ -1,0 +1,48 @@
+// Thread 1
+class TaskA extends Thread {
+    @Override
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("TaskA - Count: " + i);
+            try { Thread.sleep(400); } catch (InterruptedException e) {}
+        }
+    }
+}
+
+// Thread 2
+class TaskB extends Thread {
+    @Override
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("TaskB - Count: " + i);
+            try { Thread.sleep(500); } catch (InterruptedException e) {}
+        }
+    }
+}
+
+// Thread 3
+class TaskC extends Thread {
+    @Override
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("TaskC - Count: " + i);
+            try { Thread.sleep(600); } catch (InterruptedException e) {}
+        }
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        TaskA t1 = new TaskA();
+        TaskB t2 = new TaskB();
+        TaskC t3 = new TaskC();
+
+        // Start all threads
+        t1.start();
+        t2.start();
+        t3.start();
+
+        System.out.println("Main thread is running concurrently...");
+    }
+}
