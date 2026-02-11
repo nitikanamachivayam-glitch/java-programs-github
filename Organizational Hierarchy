@@ -1,0 +1,19 @@
+class Employee {
+    int id = 101;
+    String name = "Nitika";
+}
+
+class Manager extends Employee {
+    String dept = "IT";
+
+    void display() {
+        System.out.println(id + " " + name + " " + dept);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Manager m = new Manager();
+        m.display();
+    }
+}
