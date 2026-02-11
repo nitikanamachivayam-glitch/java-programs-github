@@ -1,0 +1,41 @@
+// Interface
+interface Payment {
+    void pay(double amount);
+}
+
+// Implementation 1
+class CreditCardPayment implements Payment {
+    @Override
+    public void pay(double amount) {
+        System.out.println("Paid Rs." + amount + " using Credit Card");
+    }
+}
+
+// Implementation 2
+class UpiPayment implements Payment {
+    @Override
+    public void pay(double amount) {
+        System.out.println("Paid Rs." + amount + " using UPI");
+    }
+}
+
+// Implementation 3
+class NetBankingPayment implements Payment {
+    @Override
+    public void pay(double amount) {
+        System.out.println("Paid Rs." + amount + " using Net Banking");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        Payment p1 = new CreditCardPayment();
+        Payment p2 = new UpiPayment();
+        Payment p3 = new NetBankingPayment();
+
+        p1.pay(1500);
+        p2.pay(800);
+        p3.pay(2500);
+    }
+}
