@@ -1,0 +1,27 @@
+// Base class
+class Person {
+    String name = "Nitika";
+}
+
+// Level 1 derived class
+class Student extends Person {
+    int rollNo = 25;
+}
+
+// Level 2 derived class
+class Scholar extends Student {
+    String field = "Computer Science";
+
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Roll No: " + rollNo);
+        System.out.println("Field: " + field);
+    }
+}
+
+public class AcademicStructure {
+    public static void main(String[] args) {
+        Scholar s = new Scholar();
+        s.display();
+    }
+}
