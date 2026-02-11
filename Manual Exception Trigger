@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Main {
+
+    // Method to check balance before withdrawal
+    static void withdraw(double balance, double amount) throws Exception {
+        if (amount > balance) {
+            // Manually throw an exception
+            throw new Exception("Error: Insufficient balance for withdrawal!");
+        } else {
+            System.out.println("Withdrawal successful. Remaining balance: " + (balance - amount));
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double balance = 5000;  // Initial balance
+
+        try {
+            System.out.print("Enter withdrawal amount: ");
+            double amount = sc.nextDouble();
+
+            withdraw(balance, amount);  // May throw exception
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            sc.close();
+            System.out.println("Transaction completed.");
+        }
+    }
+}
+
