@@ -1,0 +1,36 @@
+class InitializationSystem {
+    int id;
+    String name;
+
+    // Default constructor
+    InitializationSystem() {
+        id = 0;
+        name = "Unknown";
+    }
+
+    // Constructor with one parameter
+    InitializationSystem(int i) {
+        id = i;
+        name = "Not Assigned";
+    }
+
+    // Constructor with two parameters
+    InitializationSystem(int i, String n) {
+        id = i;
+        name = n;
+    }
+
+    void display() {
+        System.out.println("ID: " + id + ", Name: " + name);
+    }
+
+    public static void main(String[] args) {
+        InitializationSystem obj1 = new InitializationSystem();
+        InitializationSystem obj2 = new InitializationSystem(101);
+        InitializationSystem obj3 = new InitializationSystem(102, "Nitika");
+
+        obj1.display();
+        obj2.display();
+        obj3.display();
+    }
+}
