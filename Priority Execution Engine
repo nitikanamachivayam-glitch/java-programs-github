@@ -1,0 +1,39 @@
+// Thread 1
+class TaskHigh extends Thread {
+    @Override
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("High Priority Task - Count: " + i);
+            try { Thread.sleep(400); } catch (InterruptedException e) {}
+        }
+    }
+}
+
+// Thread 2
+class TaskLow extends Thread {
+    @Override
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Low Priority Task - Count: " + i);
+            try { Thread.sleep(400); } catch (InterruptedException e) {}
+        }
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        TaskHigh high = new TaskHigh();
+        TaskLow low = new TaskLow();
+
+        // Assign priorities
+        high.setPriority(Thread.MAX_PRIORITY); // 10
+        low.setPriority(Thread.MIN_PRIORITY);  // 1
+
+        // Start threads
+        high.start();
+        low.start();
+
+        System.out.println("Main thread is running concurrently...");
+    }
+}
