@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class ReverseProcessingUnit {
+
+    // Method to reverse digits
+    public static int reverseNumber(int number) {
+        int reversed = 0;
+
+        while (number != 0) {
+            int digit = number % 10;
+            reversed = reversed * 10 + digit;
+            number = number / 10;
+        }
+
+        return reversed;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Transaction Number: ");
+        int transactionNumber = sc.nextInt();
+
+        int reversedNumber = reverseNumber(transactionNumber);
+
+        System.out.println("Reversed Transaction Number for Storage: " + reversedNumber);
+
+        sc.close();
+    }
+}
