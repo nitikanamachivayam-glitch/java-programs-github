@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+class Interest {
+    double si(double p, double r, double t) {
+        return (p * r * t) / 100;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("P R T: ");
+        double p = sc.nextDouble();
+        double r = sc.nextDouble();
+        double t = sc.nextDouble();
+
+        Interest obj = new Interest();
+        System.out.println("Simple Interest: " + obj.si(p, r, t));
+
+        sc.close();
+    }
+}
