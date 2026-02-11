@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+// Custom Exception
+class InvalidInputException extends Exception {
+    public InvalidInputException(String message) {
+        super(message);
+    }
+}
+
+// Validation Class
+class Validator {
+    public void validateAge(int age) throws InvalidInputException {
+        if (age < 0 || age > 120) {
+            throw new InvalidInputException("Error: Age must be between 0 and 120.");
+        } else {
+            System.out.println("Valid age: " + age);
+        }
+    }
+}
+
+// Main Class
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Validator validator = new Validator();
+
+        try {
+            System.out.print("Enter your age: ");
+            int age = sc.nextInt();
+            validator.validateAge(age);  // May throw custom exception
+        } catch (InvalidInputException e) {
+            System.out.println(e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Invalid input. Please enter a number.");
+        } finally {
+            sc.close();
+            System.out.println("Validation completed.");
+        }
+    }
+}
